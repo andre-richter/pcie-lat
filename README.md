@@ -80,6 +80,7 @@ Example Output:
 * pcie-lat only works on 64 Bit x86 architectures.
 * Disable any CPU power-saving features (SpeedStep / TurboBoost) to minimize variances between different measurement runs. 
 * Look at the comments inside the source files for more in-depth explanations.
+* Some debug/runtime information can be viewed via `dmesg`.
 
 ##Credits##
 * Chris Wright: Linux [pci-stub](https://github.com/torvalds/linux/blob/master/drivers/pci/pci-stub.c) driver.
