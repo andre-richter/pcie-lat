@@ -335,16 +335,11 @@ static unsigned int __init get_tsc_overhead(void)
 	u32 tsc_low_before, tsc_low_after;
 	unsigned int i;
 
-	/*
-	 * "Warmup" of the benchmarking code.
-	 * This will put instructions into cache.
-	 */
 	get_tsc_top(tsc_high_before, tsc_low_before);
 	get_tsc_bottom(tsc_high_after, tsc_low_after);
 	get_tsc_top(tsc_high_before, tsc_low_before);
 	get_tsc_bottom(tsc_high_after, tsc_low_after);
 
-        /* Main latency measurement loop */
 	sum = 0;
 	for (i = 0; i < OVERHEAD_MEASURE_LOOPS; i++) {
 
