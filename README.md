@@ -9,6 +9,12 @@ Users can specify:
 * The offset within the BAR. (`Default 0x0`)
 * Sample count / Measuremnt Loops (`Default 100_000`)
 
+##Important##
+
+*Disable CPU power-saving features (SpeedStep/TurboBoost) that modify CPU clock in order to minimize result variances*
+
+If you don't, you'll get results that are not normally distributed and which were influenced by non-deterministic frequency scaling decisions from the CPU.
+
 ##Usage##
 
 First of all, become su:
@@ -88,7 +94,6 @@ Example Output:
 
 ##Remarks##
 * pcie-lat only works on 64 Bit x86 architectures.
-* Disable any CPU power-saving features (SpeedStep / TurboBoost) to minimize variances between different measurement runs. 
 * Look at the comments inside the source files for more in-depth explanations.
 * Some debug/runtime information can be viewed via `dmesg`.
 
