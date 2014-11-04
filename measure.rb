@@ -42,7 +42,7 @@ parser = OptionParser.new do |options|
 
   options.on('-p', '--pci B:D:F', 'B:D:F of PCIe device, e.g. 00:05.0') do |_bdf|
     _bdf = _bdf[0..6]
-    bdf = _bdf if _bdf =~ /\d\d\:\d\d\.\d/
+    bdf = _bdf if _bdf =~ /\h\h\:\h\h\.\h/
   end
 
   options.on('-b', '--BAR n', 'BAR number to read from. Default 0') do |bar|
