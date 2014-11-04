@@ -23,12 +23,22 @@ If the device you want to measure is currently bound to a driver, release it:
 echo 0000:08:10.0 > /sys/bus/pci/devices/0000\:08\:10.0/driver/unbind
 ```
 
-Build the kernel module and insert it. Find out device and vendor id of the device you want to measure and supply them via insmod:
+In the following, you'll need device and vendor ids of the PCIe device you want to measure. If you don't know them yet, look them up via `lspci`:
+
+```shell
+lspci -nn -s 08:10.0
+
+> 08:10.0 Ethernet controller [0200]: Intel Corporation 82576 Virtual Function [8086:10ca] (rev 01)
+```
+
+Build the kernel module and insert it. Supply device and vendor ids to insmod via the `ids` argument:
 
 ```shell
 make
 insmod ./pcie-lat.ko ids=8086:10ca
 ```
+
+
 
 If you want to add additional devices later on, you can do so via sysfs:
 
