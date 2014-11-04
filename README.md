@@ -11,7 +11,7 @@ Users can specify:
 
 ##Important##
 
-*Disable CPU power-saving features (SpeedStep/TurboBoost) that modify CPU clock in order to minimize result variances*
+**Disable CPU power-saving features (SpeedStep/TurboBoost) that modify CPU clock in order to minimize result variances**
 
 If you don't, you'll get results that are not normally distributed and which were influenced by non-deterministic frequency scaling decisions from the CPU.
 
