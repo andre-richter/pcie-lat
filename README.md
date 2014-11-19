@@ -80,7 +80,7 @@ ruby measure.rb -p 08:10.0 -l 1000000 -b 0 -o 0x0
 ##Visualization##
 
 The script saves the 3σ values of the measurement run into a csv file, e.g. `lat_1000000_loops_3sigma.csv`.
-You can view them via [NumPy](http://www.numpy.org/)/[matplotlib](http://matplotlib.org/):
+You can generate a histogram via [NumPy](http://www.numpy.org/)/[matplotlib](http://matplotlib.org/):
 
 ```shell
 python hist.py lat_1000000_loops_3sigma.csv
