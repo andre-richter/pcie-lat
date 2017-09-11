@@ -1,4 +1,4 @@
-#pcie-lat#
+# pcie-lat
 
 A generic x86_64 PCIe latency measurement module for the Linux Kernel.
 
@@ -9,12 +9,13 @@ Users can specify:
 * The offset within the BAR. (`Default 0x0`)
 * Sample count / Measuremnt Loops (`Default 100_000`)
 
-##Important##
+## Important
 
 **Disable CPU power-saving features (SpeedStep/TurboBoost) that modify CPU clock in order to minimize result variances**
 
-##Usage##
+## Usage
 
+Tested on Ubuntu 14.04 and 16.04.
 First of all, become su:
 
 ```shell
@@ -47,7 +48,7 @@ insmod ./pcie-lat.ko ids=8086:10ca
 If you want to add additional devices later on, you can do so via sysfs:
 
 ```shell
-echo "10ee 7014"  > /sys/bus/pci/drivers/pcie_lat/new_id 
+echo "10ee 7014"  > /sys/bus/pci/drivers/pcie_lat/new_id
 echo 0000:20:00.0 > /sys/bus/pci/drivers/pcie_lat/bind
 ```
 
@@ -77,7 +78,7 @@ ruby measure.rb -p 08:10.0 -l 1000000 -b 0 -o 0x0
 > writing 3σ values (in ns) to file...
 ```
 
-##Visualization##
+## Visualization
 
 The script saves the 3σ values of the measurement run into a csv file, e.g. `lat_1000000_loops_3sigma.csv`.
 You can generate a histogram via [NumPy](http://www.numpy.org/)/[matplotlib](http://matplotlib.org/):
@@ -90,16 +91,16 @@ Example Output:
 
 ![Screenshot](example.png)
 
-##Remarks##
+## Remarks
 * pcie-lat only works on 64 Bit x86 architectures.
 * Look at the comments inside the source files for more in-depth explanations.
 * Some debug/runtime information can be viewed via `dmesg`.
 
-##Credits##
+## Credits
 * Chris Wright: Linux [pci-stub](https://github.com/torvalds/linux/blob/master/drivers/pci/pci-stub.c) driver.
 * Gabriele Paoloni: TSC code presented in "[How to Benchmark Code Execution Times on Intel IA-32 and IA-64 Instruction Set Architectures](http://www.intel.com/content/dam/www/public/us/en/documents/white-papers/ia-32-ia-64-benchmark-code-execution-paper.pdf)"
 
-##License##
+## License
 Copyright (C) 2014 by the author(s)
 
 This program is free software; you can redistribute it and/or modify
