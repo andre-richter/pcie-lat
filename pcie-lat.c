@@ -367,7 +367,7 @@ static ssize_t pcielat_tsc_freq_show(struct device *dev,
 				     struct device_attribute *attr,
 				     char *buf)
 {
-	return scnprintf(buf, PAGE_SIZE, "%u\n", tsc_khz * 1000);
+	return scnprintf(buf, PAGE_SIZE, "%llu\n", tsc_khz * 1000LLU);
 }
 
 static ssize_t pcielat_tsc_overhead_show(struct device *dev,
