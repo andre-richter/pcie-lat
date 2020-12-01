@@ -128,7 +128,7 @@ def main():
     if os.path.exists(unbind_file):
         print("Unbind file {} not found!".format(unbind_file))
         exit(-1)
-    unbind_ss = 'ho -n "0000:{}" > {}'.format(pci_test['loc'], unbind_file)
+    unbind_ss = 'echo -n "0000:{}" > {}'.format(pci_test['loc'], unbind_file)
     os.system(unbind_ss)
 
     # insert module
