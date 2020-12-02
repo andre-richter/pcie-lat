@@ -15,7 +15,7 @@ Users can specify:
 
 ## Usage
 
-Tested on Ubuntu 14.04 and 16.04.
+Tested on Ubuntu 14.04 and 16.04. 
 First of all, become su:
 
 ```shell
@@ -90,6 +90,17 @@ python hist.py lat_1000000_loops_3sigma.csv
 Example Output:
 
 ![Screenshot](example.png)
+
+## All in one Python script
+
+An alternative to run pcie-lat automatively is using `all_in_one.py`, which executes all configurations and visualizations above. 
+Note that the final output graph plots all latency distributions with the Y axis in a logarithmic scale.
+Also run the script as root:
+
+```shell
+python3 all_in_one.py 00:1f.4 1000000
+```
+
 
 ## Remarks
 * pcie-lat only works on 64 Bit x86 architectures.
